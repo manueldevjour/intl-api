@@ -13,4 +13,10 @@ describe("Intl NumberFormat", () => {
     const result = formatCurrency(1234567.89, "en-UK", "GBP");
     expect(result).toBe("£1,234,567.89");
   });
+
+  it("should show ,00 or .00 for currencies with decimal places", () => {
+    const result = formatCurrency(1234567, "en-UK", "GBP");
+    console.log(result);
+    expect(result).toBe("£1,234,567.00");
+  });
 });
